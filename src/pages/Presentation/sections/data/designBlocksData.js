@@ -25,13 +25,13 @@ export default [
         image: `${imagesPrefix}/headers.jpg`,
         name: "Page Headers",
         count: 10,
-        route: "/sections/page-sections/page-headers",
+        route: "/sections/works/garment-development",
       },
       {
         image: `${imagesPrefix}/features.jpg`,
         name: "Features",
         count: 14,
-        route: "/sections/page-sections/features",
+        route: "/sections/works/features",
       },
       {
         image: `${imagesPrefix}/pricing.jpg`,

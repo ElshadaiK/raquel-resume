@@ -14,33 +14,30 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+// @mui material components
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
+import MKInput from "components/MKInput";
 
-// Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-
-// Routes
-import routes from "routes";
-
-function NavbarDark() {
+function InputStatic() {
   return (
-    <MKBox variant="gradient" bgColor="dark" shadow="sm" py={0.25}>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "Buy me a coffee",
-          color: "info",
-        }}
-        transparent
-        relative
-        light
-        center
-      />
+    <MKBox component="section" py={12}>
+      <Container>
+        <Grid container item xs={12} lg={4} py={1} mx="auto">
+          <MKInput
+            variant="standard"
+            label="Full Name"
+            placeholder="eg. Thomas Shelby"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+          />
+        </Grid>
+      </Container>
     </MKBox>
   );
 }
 
-export default NavbarDark;
+export default InputStatic;

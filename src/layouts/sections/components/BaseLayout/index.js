@@ -41,7 +41,7 @@ function BaseLayout({ breadcrumb, title, children }) {
           action={{
             type: "external",
             route: "https://www.creative-tim.com/product/material-kit-react",
-            label: "free download",
+            label: "Buy me a coffee",
             color: "info",
           }}
           transparent
