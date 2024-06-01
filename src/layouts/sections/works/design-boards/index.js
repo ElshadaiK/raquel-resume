@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import BaseLayout from "layouts/sections/components/BaseLayout";
-import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
-import Modal from "@mui/material/Modal";
 import designImages from "assets/data/designImages.json"; // Adjust the path if necessary
-import "./DesignBoards.css"; // Add custom styles here
 
 // Import all images
 import d1 from "assets/images/designImages/d1.webp";
@@ -21,6 +17,14 @@ import d11 from "assets/images/designImages/d11.webp";
 import d12 from "assets/images/designImages/d12.webp";
 import d13 from "assets/images/designImages/d13.webp";
 import d14 from "assets/images/designImages/d14.webp";
+import Box from "@mui/material/Box";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 // Map image names to imported images
 const imageMap = {
@@ -42,16 +46,19 @@ const imageMap = {
 
 function DesignBoards() {
   const [open, setOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedTitle, setSelectedTitle] = useState("");
 
-  const handleOpen = (image) => {
-    setCurrentImage(image);
+  const handleClickOpen = (image, title) => {
+    setSelectedImage(image);
+    setSelectedTitle(title);
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-    setCurrentImage(null);
+    setSelectedImage(null);
+    setSelectedTitle("");
   };
 
   return (
@@ -62,38 +69,46 @@ function DesignBoards() {
         { label: "Design Boards" },
       ]}
     >
-      <MKBox className="design-board-container">
-        {designImages.map((item, index) => {
-          const imageUrl = imageMap[item.image];
-          return (
-            <MKBox
-              key={index}
-              className={`design-board-item design-board-item-${index % 14}`}
-              onClick={() => handleOpen(imageUrl)}
-            >
-              <img src={imageUrl} alt={item.title} className="design-board-image" />
-              <MKBox className="design-board-overlay">
-                <MKTypography variant="h5" color="white">
-                  {item.title}
-                </MKTypography>
-                <MKTypography variant="body2" color="white">
-                  {item.description}
-                </MKTypography>
-              </MKBox>
-            </MKBox>
-          );
-        })}
-      </MKBox>
-      <Modal open={open} onClose={handleClose}>
-        <MKBox className="modal-content">
-          {currentImage && <img src={currentImage} alt="Full Design" className="modal-image" />}
-          {currentImage && (
-            <MKTypography variant="body2" color="white" className="modal-description">
-              {designImages.find((item) => imageMap[item.image] === currentImage).description}
-            </MKTypography>
+      <Box sx={{ width: "100%", height: "100%", overflowY: "scroll" }}>
+        <ImageList variant="masonry" cols={3} gap={8}>
+          {designImages.map((item, index) => {
+            const imageUrl = imageMap[item.image];
+            return (
+              <ImageListItem key={index} onClick={() => handleClickOpen(imageUrl, item.title)}>
+                <img
+                  srcSet={`${imageUrl}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${imageUrl}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                  style={{ cursor: "pointer" }}
+                />
+              </ImageListItem>
+            );
+          })}
+        </ImageList>
+      </Box>
+      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+        <DialogTitle>
+          {selectedTitle}
+          <IconButton
+            aria-label="close"
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+              color: (theme) => theme.palette.grey[500],
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+          {selectedImage && (
+            <img src={selectedImage} alt={selectedTitle} style={{ width: "100%" }} />
           )}
-        </MKBox>
-      </Modal>
+        </DialogContent>
+      </Dialog>
     </BaseLayout>
   );
 }
