@@ -30,7 +30,7 @@ import CenteredFooter from "examples/Footers/CenteredFooter/";
 import routes from "routes";
 
 // Images
-import bgImage from "assets/images/city-profile.jpg";
+import bgImage from "assets/images/background-vine.webp";
 
 function Author() {
   return (
@@ -53,8 +53,8 @@ function Author() {
           sx={{
             backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
               `${linearGradient(
-                rgba(gradients.dark.main, 0.8),
-                rgba(gradients.dark.state, 0.8)
+                rgba(gradients.dark.main, 0.2),
+                rgba(gradients.dark.state, 0.4)
               )}, url(${bgImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",

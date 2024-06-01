@@ -1,47 +1,42 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
+import React, { useEffect, useRef } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-
-// Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-
-// Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
-
-// Presentation page sections
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
 import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
-
-// Presentation page components
-import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
-
-// Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
-
-// Images
-import bgImage from "assets/images/bg-presentation.jpg";
+import raquelImage from "assets/images/raquel.webp";
+import vineVideo from "assets/images/vine.mp4";
+import "./Presentation.css";
 
 function Presentation() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollPercentage = scrollPosition / maxScroll;
+      const video = videoRef.current;
+      if (video) {
+        const duration = video.duration || 1; // Avoid division by zero
+        video.currentTime = duration * scrollPercentage;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <DefaultNavbar
@@ -54,42 +49,55 @@ function Presentation() {
         }}
         sticky
       />
+      <div className="background-video-container">
+        <video ref={videoRef} className="background-video" muted autoPlay loop>
+          <source src={vineVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <MKBox
         minHeight="80vh"
         width="100%"
         sx={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "top",
           display: "grid",
           placeItems: "center",
         }}
       >
         <Container>
-          <Grid container item xs={12} lg={7} justifyContent="center">
-            <MKTypography
-              variant="h2"
-              color="white"
-              mt={-6}
-              mb={1}
-              sx={({ breakpoints, typography: { size } }) => ({
-                [breakpoints.down("md")]: {
-                  fontSize: size["2xl"],
-                },
-              })}
-            >
-              Raquel Rosburg{" "}
-            </MKTypography>
-            <MKTypography
-              variant="body1"
-              color="white"
-              textAlign="center"
-              px={{ xs: 6, lg: 12 }}
-              mt={1}
-            >
-              A Student at Iowa State University, Majoring in Apparel Merchandising and Design with
-              a Minor in Textiles
-            </MKTypography>
+          <Grid container item xs={12} lg={10} justifyContent="center" alignItems="center">
+            <Grid container item xs={12} alignItems="center">
+              <Grid item xs={12} md={6} className="text-container">
+                <MKTypography
+                  variant="h2"
+                  color="primary"
+                  textAlign="center"
+                  px={{ xs: 6, lg: 12 }}
+                  mt={1}
+                >
+                  Raquel Rosburg
+                </MKTypography>
+                <MKTypography
+                  variant="body1"
+                  color="primary"
+                  textAlign="center"
+                  px={{ xs: 6, lg: 12 }}
+                  mt={1}
+                >
+                  A Student at Iowa State University, Majoring in Apparel Merchandising and Design
+                  with a Minor in Textiles
+                </MKTypography>
+              </Grid>
+              <Grid item xs={12} md={6} display="flex" justifyContent="center">
+                <MKBox
+                  component="img"
+                  src={raquelImage}
+                  alt="Raquel Rosburg"
+                  width="50vh"
+                  height="50vh"
+                  borderRadius="50%"
+                />
+              </Grid>
+            </Grid>
           </Grid>
         </Container>
       </MKBox>
@@ -107,9 +115,6 @@ function Presentation() {
         <Counters />
         <Information />
         <DesignBlocks />
-        <Container sx={{ mt: 6 }}>
-          <BuiltByDevelopers />
-        </Container>
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

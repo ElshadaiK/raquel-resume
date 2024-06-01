@@ -24,7 +24,7 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 // Images
-import profilePicture from "assets/images/bruce-mars.jpg";
+import profilePicture from "assets/images/raquel.webp";
 
 function Profile() {
   return (
@@ -32,14 +32,14 @@ function Profile() {
       <Container>
         <Grid container item xs={12} justifyContent="center" mx="auto">
           <MKBox mt={{ xs: -16, md: -20 }} textAlign="center">
-            <MKAvatar src={profilePicture} alt="Burce Mars" size="xxl" shadow="xl" />
+            <MKAvatar src={profilePicture} alt="Raquel Rosburg" size="xxl" shadow="xxl" />
           </MKBox>
           <Grid container justifyContent="center" py={6}>
             <Grid item xs={12} md={7} mx={{ xs: "auto", sm: 6, md: 1 }}>
               <MKBox display="flex" justifyContent="space-between" alignItems="center" mb={1}>
                 <MKTypography variant="h3">Raquel Rosburg</MKTypography>
                 <MKButton variant="outlined" color="info" size="small">
-                  Follow
+                  Support
                 </MKButton>
               </MKBox>
               <Grid container spacing={3} mb={3}>

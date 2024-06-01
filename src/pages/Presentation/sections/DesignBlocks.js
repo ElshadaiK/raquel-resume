@@ -72,7 +72,7 @@ function DesignBlocks() {
         >
           <MKBadge
             variant="contained"
-            color="info"
+            color="secondary"
             badgeContent="Infinite combinations"
             container
             sx={{ mb: 2 }}
