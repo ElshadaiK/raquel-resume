@@ -32,6 +32,7 @@ function Counters() {
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={70}
+              color="primary"
               suffix="+"
               title="Designs"
               description="From buttons, to inputs, navbars, alerts or cards, you are covered"
@@ -41,6 +42,7 @@ function Counters() {
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, mx: 0 }} />
             <DefaultCounterCard
               count={15}
+              color="primary"
               suffix="+"
               title="Paintings"
               description="Mix the sections, change the colors and unleash your creativity"
@@ -50,6 +52,7 @@ function Counters() {
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={4}
+              color="primary"
               title="Competitions"
               description="Save 3-4 weeks of work when you use our pre-made pages for your website"
             />

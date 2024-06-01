@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // @mui material components
@@ -32,58 +17,107 @@ function FormSimple() {
   const handleChecked = () => setChecked(!checked);
 
   return (
-    <MKBox component="section" py={12}>
+    <MKBox component="section" py={12} sx={{ backgroundColor: "rgba(244, 246, 248, 0.9)" }}>
       <Container>
-        <Grid container item justifyContent="center" xs={10} lg={7} mx="auto" textAlign="center">
-          <MKTypography variant="h3" mb={1}>
+        <Grid
+          container
+          item
+          justifyContent="center"
+          xs={12}
+          lg={8}
+          mx="auto"
+          textAlign="center"
+          mb={4}
+        >
+          <MKTypography variant="h3" mb={1} fontWeight="bold">
             Contact Us
           </MKTypography>
+          <MKTypography variant="body1" color="textSecondary">
+            I would love to hear from you! Please fill out the form below and I will get in touch
+            with you shortly.
+          </MKTypography>
         </Grid>
-        <Grid container item xs={12} lg={7} sx={{ mx: "auto" }}>
-          <MKBox width="100%" component="form" method="post" autoComplete="off">
-            <MKBox p={3}>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="First Name" fullWidth />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Last Name" fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <MKInput variant="standard" type="email" label="Email Address" fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <MKInput variant="standard" label="Your Message" multiline fullWidth rows={6} />
-                </Grid>
-                <Grid item xs={12} alignItems="center" ml={-1}>
-                  <Switch checked={checked} onChange={handleChecked} />
-                  <MKTypography
-                    variant="button"
-                    fontWeight="regular"
-                    color="text"
-                    ml={-1}
-                    sx={{ cursor: "pointer", userSelect: "none" }}
-                    onClick={handleChecked}
-                  >
-                    &nbsp;&nbsp;I agree the&nbsp;
-                  </MKTypography>
-                  <MKTypography
-                    component="a"
-                    href="#"
-                    variant="button"
-                    fontWeight="regular"
-                    color="dark"
-                  >
-                    Terms and Conditions
-                  </MKTypography>
-                </Grid>
+        <Grid container item xs={12} lg={8} sx={{ mx: "auto" }}>
+          <MKBox
+            width="100%"
+            component="form"
+            method="post"
+            autoComplete="off"
+            p={4}
+            borderRadius="10px"
+            boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+            sx={{ backgroundColor: "white" }}
+          >
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6}>
+                <MKInput
+                  variant="standard"
+                  label="First Name"
+                  fullWidth
+                  sx={{ borderRadius: "5px" }}
+                />
               </Grid>
-              <Grid container item justifyContent="center" xs={12} my={2}>
-                <MKButton type="submit" variant="gradient" color="dark" fullWidth>
-                  Send Message
-                </MKButton>
+              <Grid item xs={12} md={6}>
+                <MKInput
+                  variant="standard"
+                  label="Last Name"
+                  fullWidth
+                  sx={{ borderRadius: "5px" }}
+                />
               </Grid>
-            </MKBox>
+              <Grid item xs={12}>
+                <MKInput
+                  variant="standard"
+                  type="email"
+                  label="Email Address"
+                  fullWidth
+                  sx={{ borderRadius: "5px" }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <MKInput
+                  variant="standard"
+                  label="Your Message"
+                  multiline
+                  fullWidth
+                  rows={6}
+                  sx={{ borderRadius: "5px" }}
+                />
+              </Grid>
+              <Grid item xs={12} display="flex" alignItems="center">
+                <Switch checked={checked} onChange={handleChecked} />
+                <MKTypography
+                  variant="button"
+                  fontWeight="regular"
+                  color="text"
+                  ml={1}
+                  sx={{ cursor: "pointer", userSelect: "none" }}
+                  onClick={handleChecked}
+                >
+                  I agree to the&nbsp;
+                </MKTypography>
+                <MKTypography
+                  component="a"
+                  href="#"
+                  variant="button"
+                  fontWeight="bold"
+                  color="primary"
+                >
+                  Terms and Conditions
+                </MKTypography>
+              </Grid>
+            </Grid>
+            <Grid container item justifyContent="center" xs={12} mt={4}>
+              <MKButton
+                type="submit"
+                variant="gradient"
+                color="primary"
+                fullWidth
+                sx={{ borderRadius: "5px", py: 1.5 }}
+              >
+                Send Message
+              </MKButton>
+            </Grid>
           </MKBox>
         </Grid>
       </Container>

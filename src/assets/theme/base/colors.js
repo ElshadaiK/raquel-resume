@@ -98,8 +98,8 @@ export default {
 
   gradients: {
     primary: {
-      main: "#EC407A",
-      state: "#D81B60",
+      main: "#217436",
+      state: "#702963",
     },
 
     secondary: {
@@ -202,8 +202,8 @@ export default {
 
   badgeColors: {
     primary: {
-      background: "#f8b3ca",
-      text: "#cc084b",
+      background: "#217436",
+      text: "#FFFFFF",
     },
 
     secondary: {

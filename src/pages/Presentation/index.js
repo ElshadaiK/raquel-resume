@@ -74,7 +74,7 @@ function Presentation() {
                   px={{ xs: 6, lg: 12 }}
                   mt={1}
                 >
-                  Raquel Rosburg
+                  Hi! This is Raquel
                 </MKTypography>
                 <MKTypography
                   variant="body1"
@@ -83,7 +83,7 @@ function Presentation() {
                   px={{ xs: 6, lg: 12 }}
                   mt={1}
                 >
-                  A Student at Iowa State University, Majoring in Apparel Merchandising and Design
+                  I study at Iowa State University, Majoring in Apparel Merchandising and Design
                   with a Minor in Textiles
                 </MKTypography>
               </Grid>
@@ -107,7 +107,7 @@ function Presentation() {
           mx: { xs: 2, lg: 3 },
           mt: -8,
           mb: 4,
-          backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
+          backgroundColor: "rgba(195, 177, 225, 0.3)",
           backdropFilter: "saturate(200%) blur(30px)",
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
