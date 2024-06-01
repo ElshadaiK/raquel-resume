@@ -1,4 +1,3 @@
-
 /**
  * The base breakpoints for the Material Kit 2 React.
  * You can add new breakpoints using this file.

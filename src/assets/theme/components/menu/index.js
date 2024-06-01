@@ -1,4 +1,3 @@
-
 // Material Kit 2 React base styles
 import boxShadows from "assets/theme/base/boxShadows";
 import typography from "assets/theme/base/typography";

@@ -1,4 +1,3 @@
-
 /**
  * The base box-shadow styles for the Material Kit 2 React.
  * You can add new box-shadow using this file.
