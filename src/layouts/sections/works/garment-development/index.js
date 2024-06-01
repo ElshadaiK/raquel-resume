@@ -18,7 +18,7 @@ import BaseLayout from "layouts/sections/components/BaseLayout";
 import View from "layouts/sections/components/View";
 
 // GarmentDevelopment page components
-import HeaderOne from "layouts/sections/works/garment-development/components/HeaderOne";
+import HeaderOne from "layouts/sections/works/garment-development/components/GarmentCarousel";
 
 // GarmentDevelopment page components code
 

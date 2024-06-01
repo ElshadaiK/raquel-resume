@@ -53,6 +53,7 @@ import DesignBoards from "layouts/sections/works/design-boards";
 import CareerBoard from "layouts/sections/board/career-board";
 import Photography from "layouts/sections/works/photography";
 import Paintings from "layouts/sections/works/paintings";
+import MiniDesignLine from "layouts/sections/works/mini-design-line";
 
 const routes = [
   {
@@ -71,6 +72,12 @@ const routes = [
         description: "See all designs",
         route: "/sections/works/design-boards",
         component: <DesignBoards />,
+      },
+      {
+        name: "mini design line",
+        description: "See mini designs",
+        route: "/sections/works/mini-design-line",
+        component: <MiniDesignLine />,
       },
 
       {

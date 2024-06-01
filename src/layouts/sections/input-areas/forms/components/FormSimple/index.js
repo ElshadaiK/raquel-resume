@@ -30,7 +30,7 @@ function FormSimple() {
           mb={4}
         >
           <MKTypography variant="h3" mb={1} fontWeight="bold">
-            Contact Us
+            Contact Me
           </MKTypography>
           <MKTypography variant="body1" color="textSecondary">
             I would love to hear from you! Please fill out the form below and I will get in touch
