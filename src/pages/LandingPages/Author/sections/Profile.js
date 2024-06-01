@@ -16,7 +16,6 @@ Coded by www.creative-tim.com
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Icon from "@mui/material/Icon";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
@@ -38,7 +37,7 @@ function Profile() {
           <Grid container justifyContent="center" py={6}>
             <Grid item xs={12} md={7} mx={{ xs: "auto", sm: 6, md: 1 }}>
               <MKBox display="flex" justifyContent="space-between" alignItems="center" mb={1}>
-                <MKTypography variant="h3">Michael Roven</MKTypography>
+                <MKTypography variant="h3">Raquel Rosburg</MKTypography>
                 <MKButton variant="outlined" color="info" size="small">
                   Follow
                 </MKButton>
@@ -70,9 +69,13 @@ function Profile() {
                 </Grid>
               </Grid>
               <MKTypography variant="body1" fontWeight="light" color="text">
-                Decisions: If you can&apos;t decide, the answer is no. If two equally difficult
-                paths, choose the one more painful in the short term (pain avoidance is creating an
-                illusion of equality). Choose the path that leaves you more equanimous. <br />
+                I like to work with many different mediums. Working in different mediums has allowed
+                me to look at design through different lenses. Painting has allowed me to play with
+                texture. Photography has shown me how to be mindful of details. Making design boards
+                has helped me understand the composition of different elements. Garment development
+                has challenged me to develop a concept thoroughly. Service projects have shown me
+                the importance of giving back to your community. Check out my career mood board to
+                see my professional development plan. <br />
                 <MKTypography
                   component="a"
                   href="#"
@@ -94,9 +97,7 @@ function Profile() {
                       transform: `translateX(6px)`,
                     },
                   }}
-                >
-                  More about me <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
-                </MKTypography>
+                ></MKTypography>
               </MKTypography>
             </Grid>
           </Grid>

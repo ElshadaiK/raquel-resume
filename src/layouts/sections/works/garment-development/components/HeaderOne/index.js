@@ -1,189 +1,141 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
-import Stack from "@mui/material/Stack";
-
-// Material Kit 2 React components
+import React from "react";
+import Carousel from "react-material-ui-carousel";
 import MKBox from "components/MKBox";
-import MKButton from "components/MKButton";
-import MKTypography from "components/MKTypography";
+import bgImage1 from "assets/images/garmentImages/g1.webp";
+import bgImage2 from "assets/images/garmentImages/g2.webp";
+import bgImage3 from "assets/images/garmentImages/g3.webp";
+import bgImage4 from "assets/images/garmentImages/g4.webp";
+import bgImage5 from "assets/images/garmentImages/g5.webp";
+import bgImage6 from "assets/images/garmentImages/g6.webp";
+import bgImage7 from "assets/images/garmentImages/g7.webp";
+import bgImage8 from "assets/images/garmentImages/g8.webp";
+import bgImage9 from "assets/images/garmentImages/g9.webp";
+import bgImage10 from "assets/images/garmentImages/g10.webp";
+import bgImage11 from "assets/images/garmentImages/g11.webp";
+import bgImage12 from "assets/images/garmentImages/g12.webp";
+import bgImage13 from "assets/images/garmentImages/g13.webp";
+import bgImage14 from "assets/images/garmentImages/g14.webp";
+import bgImage15 from "assets/images/garmentImages/g15.webp";
+import bgImage16 from "assets/images/garmentImages/g16.webp";
+import bgImage17 from "assets/images/garmentImages/g17.webp";
+import bgImage18 from "assets/images/garmentImages/g18.webp";
+import bgImage19 from "assets/images/garmentImages/g19.webp";
+import bgImage20 from "assets/images/garmentImages/g20.webp";
 
-// Images
-import bgImage from "assets/images/bg-coworking.jpeg";
-
+const items = [
+  {
+    garmentImage: bgImage1,
+  },
+  {
+    garmentImage: bgImage2,
+  },
+  {
+    garmentImage: bgImage3,
+  },
+  {
+    garmentImage: bgImage4,
+  },
+  {
+    garmentImage: bgImage5,
+  },
+  {
+    garmentImage: bgImage6,
+  },
+  {
+    garmentImage: bgImage7,
+  },
+  {
+    garmentImage: bgImage8,
+  },
+  {
+    garmentImage: bgImage9,
+  },
+  {
+    garmentImage: bgImage10,
+  },
+  {
+    garmentImage: bgImage11,
+  },
+  {
+    garmentImage: bgImage12,
+  },
+  {
+    garmentImage: bgImage13,
+  },
+  {
+    garmentImage: bgImage14,
+  },
+  {
+    garmentImage: bgImage15,
+  },
+  {
+    garmentImage: bgImage16,
+  },
+  {
+    garmentImage: bgImage17,
+  },
+  {
+    garmentImage: bgImage18,
+  },
+  {
+    garmentImage: bgImage19,
+  },
+  {
+    garmentImage: bgImage20,
+  },
+];
 function HeaderOne() {
   return (
-    <MKBox component="header" position="relative" height="100%">
-      <MKBox component="nav" position="absolute" top="0.5rem" width="100%">
-        <Container>
-          <Grid container flexDirection="row" alignItems="center">
-            <MKTypography
-              component={Link}
-              href="#"
-              variant="button"
-              color="white"
-              fontWeight="regular"
-              py={0.8125}
-              mr={2}
-            >
-              Material Design
-            </MKTypography>
-            <MKButton
-              variant="outlined"
-              color="white"
-              sx={{ display: { xs: "block", lg: "none" }, ml: "auto" }}
-            >
-              <MKBox component="i" color="white" className="fas fa-bars" />
-            </MKButton>
-            <MKBox
-              component="ul"
-              display={{ xs: "none", lg: "flex" }}
-              p={0}
-              my={0}
-              mx="auto"
-              sx={{ listStyle: "none" }}
-            >
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  color="white"
-                  fontWeight="regular"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Home
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  color="white"
-                  fontWeight="regular"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  About Us
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  color="white"
-                  fontWeight="regular"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Contact Us
-                </MKTypography>
-              </MKBox>
-            </MKBox>
-            <MKBox
-              component="ul"
-              display={{ xs: "none", lg: "flex" }}
-              p={0}
-              m={0}
-              sx={{ listStyle: "none" }}
-            >
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <MKBox component="i" color="white" className="fab fa-twitter" />
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <MKBox component="i" color="white" className="fab fa-facebook" />
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <MKBox component="i" color="white" className="fab fa-instagram" />
-                </MKTypography>
-              </MKBox>
-            </MKBox>
-          </Grid>
-        </Container>
-      </MKBox>
-      <MKBox
-        display="flex"
-        alignItems="center"
-        minHeight="100%"
+    <MKBox component="header" position="relative" height="100vh" width="100%">
+      <Carousel
+        indicators={true}
+        navButtonsAlwaysVisible={true}
         sx={{
-          backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.5),
-              rgba(gradients.dark.state, 0.5)
-            )}, url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        indicatorContainerProps={{
+          style: {
+            position: "absolute",
+            bottom: 10,
+            textAlign: "center",
+            width: "100%",
+          },
+        }}
+        navButtonsProps={{
+          style: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            borderRadius: 0,
+            margin: 0,
+            padding: 10,
+          },
+        }}
+        navButtonsWrapperProps={{
+          style: {
+            bottom: 10,
+            top: "unset",
+          },
         }}
       >
-        <Container>
-          <Grid container item xs={12} md={7} lg={6} flexDirection="column" justifyContent="center">
-            <MKTypography
-              variant="h1"
-              color="white"
-              mb={3}
-              sx={({ breakpoints, typography: { size } }) => ({
-                [breakpoints.down("md")]: {
-                  fontSize: size["3xl"],
-                },
-              })}
-            >
-              Material Kit
-            </MKTypography>
-            <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
-              The time is now for it be okay to be great. People in this world shun people for being
-              nice.
-            </MKTypography>
-            <Stack direction="row" spacing={1} mt={3}>
-              <MKButton color="white">Get Started</MKButton>
-              <MKButton variant="text" color="white">
-                Read more
-              </MKButton>
-            </Stack>
-          </Grid>
-        </Container>
-      </MKBox>
+        {items.map((item, i) => (
+          <MKBox
+            key={i}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            height="100vh"
+            width="100%"
+            sx={{
+              backgroundImage: `url(${item.garmentImage})`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+        ))}
+      </Carousel>
     </MKBox>
   );
 }

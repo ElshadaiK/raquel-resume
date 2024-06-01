@@ -29,7 +29,6 @@ import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Grid from "@mui/material/Grid";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import Slide from "@mui/material/Slide";
 
 // Material Kit 2 React components
@@ -78,32 +77,7 @@ function View({ children, code, title, height, ...rest }) {
           </Grid>
           <Grid item xs={12} lg={3}>
             <AppBar position="static">
-              <Tabs value={activeTab} onChange={handleTabType}>
-                <Tab
-                  icon={
-                    <MKBox
-                      component="i"
-                      color="dark"
-                      mr={1.25}
-                      sx={{ fontSize: ({ typography: { size } }) => size.sm }}
-                      className="fas fa-desktop"
-                    />
-                  }
-                  label="Preview"
-                />
-                <Tab
-                  icon={
-                    <MKBox
-                      component="i"
-                      color="dark"
-                      mr={1.25}
-                      sx={{ fontSize: ({ typography: { size } }) => size.sm }}
-                      className="fas fa-code"
-                    />
-                  }
-                  label="Code"
-                />
-              </Tabs>
+              <Tabs value={activeTab} onChange={handleTabType}></Tabs>
             </AppBar>
           </Grid>
         </Grid>

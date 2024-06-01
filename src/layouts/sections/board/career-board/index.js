@@ -4,7 +4,6 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import Modal from "@mui/material/Modal";
 import designImages from "assets/data/designImages.json"; // Adjust the path if necessary
-import "./DesignBoards.css"; // Add custom styles here
 
 // Import all images
 import d1 from "assets/images/designImages/d1.webp";

@@ -28,7 +28,7 @@ import tooltipsCode from "layouts/sections/attention-catchers/tooltips-popovers/
 function Photography() {
   return (
     <BaseLayout
-      title="Landscapes & Portraits"
+      title="Captivating photographs that capture the essence of my designs, emphasizing the interplay between fashion and nature."
       breadcrumb={[
         { label: "Work", route: "/sections/works/photography" },
         { label: "Photography" },

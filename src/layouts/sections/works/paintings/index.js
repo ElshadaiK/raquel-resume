@@ -26,7 +26,7 @@ import simpleModalCode from "layouts/sections/attention-catchers/modals/componen
 function Paintings() {
   return (
     <BaseLayout
-      title="Modals"
+      title="A collection of paintings that reflect my artistic influences and exploration of color, texture, and form."
       breadcrumb={[
         { label: "Work", route: "/sections/works/paintings" },
         { label: "Paintings and Mixed Media" },

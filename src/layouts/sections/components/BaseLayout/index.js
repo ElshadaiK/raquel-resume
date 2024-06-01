@@ -53,7 +53,7 @@ function BaseLayout({ breadcrumb, title, children }) {
           <MKBox width={{ xs: "100%", md: "50%", lg: "25%" }} mb={3}>
             <Breadcrumbs routes={breadcrumb} />
           </MKBox>
-          <MKTypography variant="h3" mb={1}>
+          <MKTypography variant="h6" mb={1}>
             {title}
           </MKTypography>
           {children}

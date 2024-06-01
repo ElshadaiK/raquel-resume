@@ -44,14 +44,13 @@ import DashboardCustomize from "@mui/icons-material/DashboardCustomize";
 import Send from "@mui/icons-material/Send";
 
 // Pages
-import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Author from "layouts/pages/landing-pages/author";
 
 // Sections
 import GarmentDevelopment from "layouts/sections/works/garment-development";
 import DesignBoards from "layouts/sections/works/design-boards";
-import CareerBoard from "layouts/sections/career-board";
+import CareerBoard from "layouts/sections/board/career-board";
 import Photography from "layouts/sections/works/photography";
 import Paintings from "layouts/sections/works/paintings";
 
@@ -62,7 +61,7 @@ const routes = [
     collapse: [
       {
         name: "Garment Development",
-        description: "See all sections",
+        description: "See all garments",
         route: "/sections/works/garment-development",
         component: <GarmentDevelopment />,
       },
@@ -82,7 +81,7 @@ const routes = [
       },
       {
         name: "paintings & mixed media",
-        description: "See all photos",
+        description: "See all paintings",
         route: "/sections/works/paintings",
         component: <Paintings />,
       },
@@ -95,21 +94,19 @@ const routes = [
     component: <CareerBoard />,
   },
   {
-    name: "About Me",
+    name: "About",
     icon: <Icon>face_3</Icon>,
     collapse: [
       {
-        name: "about us",
-        description: "All about overview, quick start, license and contents",
-        route: "/pages/landing-pages/about-us",
-        component: <AboutUs />,
-      },
-
-      {
-        name: "author",
+        name: "Me",
         description: "See our colors, icons and typography",
         route: "/pages/landing-pages/author",
         component: <Author />,
+      },
+      {
+        name: "developer",
+        description: "All about overview, quick start, license and contents",
+        href: "https://elshadaik.github.io",
       },
     ],
   },
